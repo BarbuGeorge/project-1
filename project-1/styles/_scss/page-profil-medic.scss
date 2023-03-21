@@ -1,0 +1,42 @@
+.page-profil-medic {
+	.wp-block-column {
+		@extend .mb-lg-1, .mb-0;
+		overflow: hidden;
+
+		&:empty {
+			@include media-breakpoint-down(md) {
+				display: none;
+			}
+		}
+
+		.wp-block-image {
+			margin-bottom: 0 !important;
+		}
+
+		p {
+			@extend .py-6;
+			@extend .px-4;
+			@extend .text-center;
+			@extend .h-100;
+			font-size: 0.8rem;
+			background: $dark-gray;
+			margin-bottom: 0 !important;
+		}
+	}
+
+	// .wp-block-columns{
+	// 	@include media-breakpoint-down(md){
+	// 		margin-bottom:0!important;
+	// 	}
+	// }
+	.single-post-image {
+		@include media-breakpoint-down($breakpoint) {
+			margin-bottom: 2.5rem !important;
+		}
+	}
+
+	h4 {
+		@extend .mt-lg-10, .mt-7;
+		@extend .mb-4;
+	}
+}

@@ -1,0 +1,46 @@
+// Form
+form {
+	@extend .d-flex, .flex-wrap;
+
+	.form-floating {
+		@extend .pe-4;
+		label{
+			@extend .px-0;
+			opacity:100%!important;
+		}
+	}
+
+	.form-floating {
+		.form-control {
+			@extend .border-2, .border-bottom;
+			padding-left: .2rem;
+			padding-right: .2rem;
+			border: 0;
+			border-color: $dark-gray !important;
+		}
+	}
+
+	input:focus+label,
+	textarea:focus+label {
+		color: $primary;
+		top: -0.7rem;
+	}
+
+	// Remove light blue background on autocomplete
+	input:-webkit-autofill,
+	input:-webkit-autofill:focus {
+		transition: background-color 600000s 0s, color 600000s 0s;
+	}
+
+	input[data-autocompleted] {
+		background-color: transparent !important;
+	}
+
+	// Toggle class when input has value
+	.input-completed{
+		.label{
+			@extend .text-primary;
+			top:-0.7rem;
+		}
+	}
+}

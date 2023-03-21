@@ -1,0 +1,19 @@
+.page-title-header{
+	@extend .text-center;
+	@include media-breakpoint-down($breakpoint){
+		margin-top:2.5rem;
+		margin-bottom:2.5rem;
+	}
+	&.hr-centered{
+		hr{
+			@extend .mt-10, .mb-10;
+			@extend .mx-auto;
+		}
+	}
+}
+
+.page{
+	.page-title-header{
+		@extend .hr-centered;
+	}
+}

@@ -1,0 +1,280 @@
+.navbar {
+	z-index: 2;
+	@include media-breakpoint-up($breakpoint) {
+		.nav-desktop {
+			display: block !important;
+			li{
+				white-space: nowrap;
+			}
+		}
+
+		.nav-mobile {
+			display: none !important;
+		}
+	}
+
+	@include media-breakpoint-down($breakpoint) {
+
+		.nav-desktop {
+			display: none !important;
+		}
+
+		.nav-mobile {
+			@extend .text-muted;
+			display: flex !important;
+			flex-wrap: wrap;
+			position: relative;
+			@include media-breakpoint-down($breakpoint){
+				.sub-menu{
+					.menu-item{
+						padding-top: 0.25rem !important;
+						padding-bottom: 0.25rem !important;
+						font-family:$font-family-base!important;
+						a{
+							color:$text-muted!important;
+							text-transform:capitalize!important;
+						}
+					}
+				}
+			}
+			.mobile-search {
+				padding-top: 1.5rem;
+
+				input {
+					@extend .border-0;
+					@extend .text-muted;
+					@extend .shadow-none;
+					@extend .w-100;
+					@extend .p-1;
+					background: $gray-400;
+					outline: none;
+
+					&::placeholder {
+						@extend .text-muted;
+						font-size: 0.8rem;
+					}
+				}
+			}
+
+			.menu-mobile-menu-container {
+				padding-top: 1.5rem;
+				padding-bottom: 2.5rem;
+
+				.menu {
+					@extend .menu-mobile-dropdown;
+				}
+			}
+
+			.hamburger-icon {
+				width: 1.5rem;
+				height: auto;
+			}
+
+			.navbar-toggler {
+				@extend .text-muted;
+
+				&:not(.collapsed) {
+					color: #fff !important;
+				}
+			}
+
+
+			i {
+				align-self: center;
+				// color:$gray-400;
+			}
+		}
+	}
+
+	.nav-bar {
+		@extend .d-block;
+		@extend .pt-lg-5, .pt-3;
+		@extend .container;
+		@extend .position-relative;
+
+		.navbar-brand {
+			#logo_menu{
+				&:hover{
+					.header-logo {
+						fill: #AC8959 !important;
+					}
+				}
+			}
+			.header-logo {
+				fill: #fff !important;
+			}
+		}
+
+		.menu {
+			@extend .mb-0;
+			display: flex;
+			transform: translateX(0%);
+
+			.menu-item {
+				@extend .mx-0;
+				@extend .position-relative;
+				font-family: $headings-font-family;
+
+				a {
+					@extend .text-light;
+					@extend .text-uppercase;
+					@extend .position-relative;
+					@extend .text-decoration-none;
+					letter-spacing:2px;
+					&:not(.sub-menu a){
+						font-weight:$font-weight-normal;
+					}
+					&:after {
+						position: absolute;
+						top: 1.5rem;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						margin: auto;
+						width: 0%;
+						content: '.';
+						color: transparent;
+						background: $primary;
+						height: 2px;
+						transition: all 0.2s ease-in-out;
+
+						@include media-breakpoint-down($breakpoint) {
+							display: none;
+						}
+					}
+
+					&:hover {
+						&:after {
+							width: 100% !important;
+							transition: all 0.2s ease-in-out;
+						}
+					}
+				}
+			}
+		}
+
+		// Desktop
+		.desktop-nav-wrapper {
+			@extend .d-lg-flex, .d-none;
+			@extend .justify-content-between, .align-items-center;
+			@extend .w-100;
+
+			.sub-menu {
+				@extend .d-none;
+			}
+		}
+
+		//
+
+		.header-menu {
+			@extend .d-flex, .align-items-center, .flex-row;
+
+			.menu-top-menu-left-container,
+			.menu-top-menu-right-container{
+				@extend .w-50;
+				font-size: 0.9rem;
+				@include media-breakpoint-down(xl){
+					font-size: 0.7rem!important;
+				}
+			}
+
+			.menu-top-menu-left-container {
+				li {
+					@extend .pe-6;
+				}
+			}
+
+			.menu-top-menu-right-container{
+				li{
+					@extend .ps-6;
+				}
+			}
+
+			.menu-top-menu-center-container {
+				@extend .mx-auto;
+				@extend .mt-n6;
+			}
+
+			.menu-top-menu-right-container {
+				@extend .text-end;
+			}
+
+			#menu-top-menu-right {
+				@extend .justify-content-end;
+
+				li {
+					&:last-of-type {
+						a {
+							padding: 0 !important;
+						}
+					}
+				}
+			}
+		}
+
+		.top-bar {
+			@extend .d-flex;
+			@extend .align-items-center;
+			@extend .mb-3;
+
+			@include media-breakpoint-down(lg) {
+				display: none !important;
+			}
+
+			.language {
+				@extend .me-auto;
+				@extend .text-muted;
+				a{
+					@extend .text-decoration-none;
+					@extend .mb-0;
+					font-size:0.9rem;
+					font-weight: $font-weight-normal;
+					font-family:$headings-font-family;
+					color:$gray-400;
+					letter-spacing: 2px;
+					&.active{
+					 color:$primary!important;
+					}
+					@include media-breakpoint-down(xl){
+						font-size: 0.7rem!important;
+					}
+				}
+				.link{
+					&:hover{
+						color:$primary!important;
+					}
+				}
+				span{
+					@extend .mx-2;
+					@extend .fw-bold;
+					font-size:1.2rem;
+					color:$dark-gray;
+				}
+			}
+
+			.icons {
+				@extend .d-flex;
+				@extend .ms-auto;
+
+				svg {
+
+					&:not(:last-child) {
+						@extend .me-4;
+					}
+
+					&:hover {
+						.top-bar-icon {
+							cursor: pointer;
+							fill: $primary !important;
+						}
+					}
+
+					.top-bar-icon {
+						fill: $gray-400 !important;
+						stroke-width:0!important;
+					}
+				}
+			}
+		}
+	}
+}

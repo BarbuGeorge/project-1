@@ -1,0 +1,12 @@
+.page-articole{
+	.page-title-header{
+		@extend .hr-centered;
+		@extend .mb-9;
+	}
+	.articole-cards-list{
+		@extend .container, .pb-7;
+		@include media-breakpoint-down($breakpoint){
+			margin-bottom:0!important;
+		}
+	}
+}

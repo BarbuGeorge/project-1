@@ -1,0 +1,37 @@
+// 4 columns
+.icol-4 {
+	@extend .col-xl-3, .col-md-6, .col-12;
+	@extend .mb-lg-5, .mb-0;
+	&.lg-50{
+		@include media-breakpoint-between(md, xl){
+			width:50%!important;
+		}
+	}
+	&.lg-100{
+		@include media-breakpoint-down(xl){
+			width:100%!important;
+		}
+	}
+}
+
+
+// 3 columns
+.icol-3 {
+	@extend .col-xl-4, .col-md-6, .col-12;
+	@extend .mb-5;
+}
+
+
+// 2 columns
+.icol-2 {
+	@extend .col-md-6, .col-12;
+	@extend .mb-5;
+}
+
+// applies to CONTENT + SIDEBAR ... maybe
+.i-col-left {
+	@extend .col-md-8;
+}
+.i-col-right {
+	@extend .col-md-4;
+}

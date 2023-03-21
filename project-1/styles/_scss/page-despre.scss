@@ -1,0 +1,8 @@
+.page-despre{
+	.page-title-header{
+		@extend .hr-centered;
+		.breadcrumb{
+			@extend .d-none;
+		}
+	}
+}

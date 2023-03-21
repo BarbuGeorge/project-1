@@ -1,0 +1,17 @@
+.section-consultatii{
+	@extend .position-relative;
+	@extend .pb-lg-14, .pb-8;
+	@extend .px-lg-4, .px-0;
+	background:url('../../images/page-home/background-consultatie.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	@include media-breakpoint-down($breakpoint){
+		margin-bottom:0!important;
+	}
+	.card{
+		@extend .px-lg-8, .px-4, .py-8;
+		@extend .col-md-12, .offset-md-0, .col-lg-6, .offset-lg-2;
+		@extend .mx-auto;
+	}
+}

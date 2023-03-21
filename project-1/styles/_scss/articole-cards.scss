@@ -1,0 +1,10 @@
+.articol-card-wrapper {
+	@extend .icol-3;
+	@extend .px-lg-3, .px-0;
+	.card {
+		@extend .h-100, .w-100;
+		@extend .px-0;
+		@extend .position-relative;
+		@extend .card-dark;
+	}
+}

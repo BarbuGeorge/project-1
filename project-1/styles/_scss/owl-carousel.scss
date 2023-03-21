@@ -1,0 +1,49 @@
+.owl-carousel {
+	.owl-item {
+		@extend .pe-4;
+		@include media-breakpoint-down($breakpoint){
+			width:340px!important;
+		}
+		.card {
+			.card-body {
+				@extend .py-5;
+				@extend .text-center;
+			}
+		}
+	}
+
+	.owl-stage-outer {
+		@extend .mb-6;
+		overflow:visible!important;
+	}
+
+	.owl-dots {
+		@extend .mb-5;
+
+		.owl-dot {
+			@extend .rounded-circle;
+			@extend .mx-2;
+
+			padding: 0.4rem !important;
+			background: $gray-400;
+
+			&.active {
+				@extend .bg-secondary;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down($breakpoint){
+	.owl-stage{
+		display:flex!important;
+		flex-wrap: wrap;
+		justify-content: flex-end!important;
+	}
+	.owl-item{
+
+		&:last-child{
+			margin-left:-1rem!important;
+		}
+	}
+}

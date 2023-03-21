@@ -1,0 +1,16 @@
+ul{
+	@extend .list-unstyled;
+}
+
+.styled{
+	margin-bottom:2rem!important;
+	li{
+		@extend .position-relative;
+		&:before{
+			content:url('../../images/chevron-bullet-list.svg');
+			padding-right:0.7rem;
+			fill:$primary!important;
+			color:$primary;
+		}
+	}
+}

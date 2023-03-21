@@ -1,0 +1,23 @@
+body, html{
+	overflow-x:hidden;
+	min-height:100%;
+}
+main {
+	min-height: calc(100vh - 850px);
+}
+section{
+	@extend .py-lg-10, .py-3, .position-relative;
+
+	&:not(.container-fluid){
+		@extend .container;
+	}
+
+	// margin-bottom:14rem;
+	@include media-breakpoint-down($breakpoint){
+		margin-bottom:2rem;
+	}
+
+}
+.section-page, .section-profil-medic-content, .articole-cards-list{
+	@extend .pt-0;
+}

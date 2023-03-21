@@ -1,0 +1,40 @@
+.page-contact {
+	.page-title-header{
+		@extend .hr-centered;
+		@extend .mb-10;
+		.breadcrumb{
+			@extend .d-none;
+		}
+		hr{
+			margin-top:0!important;
+		}
+	}
+	.section-form{
+		@extend .position-relative;
+		@extend .bg-section-a;
+		.form-wrapper {
+			@extend .col-lg-7, .col-12;
+			@extend .mt-9;
+
+		}
+	}
+	//
+	.section-contact-info{
+		@extend .pb-lg-10, .pb-5;
+	}
+
+
+	table{
+		tr{
+			@extend .d-flex, .flex-wrap;
+			td{
+				@extend .icol-3;
+				@extend .text-start;
+				@extend .border-0;
+				h5{
+					@extend .mb-3;
+				}
+			}
+		}
+	}
+}

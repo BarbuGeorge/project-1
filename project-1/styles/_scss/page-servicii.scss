@@ -1,0 +1,76 @@
+.page-servicii{
+	h3{
+		&:not(:first-of-type){
+			@extend .mt-7;
+		}
+	}
+	hr{
+		&:not(.page-title-header hr){
+			border-top-color:$dark-gray!important;
+			@extend .mt-8, .mb-12;
+		}
+		&:last-child{
+			@extend .d-none;
+		}
+	}
+
+	.servicii-categories-list{
+		.serviciu{
+			.serviciu-title{
+				@extend .px-10;
+			}
+			.serviciu-image{
+				@extend .w-100, .h-100;
+				@include media-breakpoint-up($breakpoint){
+					height:18rem;
+				}
+				img{
+					// @extend .d-none;
+					@extend .img-fluid;
+					object-fit:cover;
+				}
+			}
+		}
+	}
+}
+
+.page-taxonomy-servicii, .page-servicii{
+	.page-title-header{
+		@extend .hr-centered;
+	}
+}
+
+.serviciu {
+	@extend .icol-4;
+	@extend .position-relative;
+	margin-bottom:4rem!important;
+	overflow:hidden!important;
+	&:hover{
+		cursor:pointer;
+		img{
+			transform:scale(1.2);
+			transition:transform 0.3s ease-in-out;
+		}
+		.serviciu-title{
+			h4{
+				@extend .text-primary;
+				transition:transform 0.3s ease-in-out;
+			}
+		}
+	}
+
+	img{
+		object-fit:cover;
+		transform:scale(1);
+		transition:transform 0.3s ease-in-out;
+	}
+
+	.serviciu-title {
+		@extend .position-absolute, .top-0, .bottom-0, .start-0, .end-0;
+		@extend .d-flex, .align-items-center, .justify-content-center;
+		@extend .mx-auto, .my-auto;
+		transition:transform 0.3s ease-in-out;
+		z-index:3;
+	}
+
+}

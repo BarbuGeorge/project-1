@@ -1,0 +1,144 @@
+footer {
+	@extend .position-relative;
+	@extend .bg-dark;
+	@extend .pt-lg-9, .pt-2, .pb-lg-0, .pb-1;
+	// letter-spacing:2px; // meh
+	hr {
+		@extend .mt-3, .mb-9;
+		border-color: $dark-gray !important;
+	}
+
+	a {
+		@extend .text-decoration-none;
+		color: $gray-300;
+
+		&:hover {
+			color: #fff !important;
+		}
+	}
+
+	.menu-footer-column-one-container,
+	.menu-footer-column-two-container,
+	.menu-footer-column-three-container {
+		.menu {
+			margin-bottom:0!important;
+		  >	li {
+				&:first-of-type {
+					@include media-breakpoint-down(md) {
+						border-top: 2px solid $dark-gray !important;
+					}
+				}
+			}
+		}
+	}
+
+	.footer-icons {
+
+		i {
+			@extend .position-relative;
+			@extend .rounded-circle;
+			@extend .text-center;
+
+			border: 1px solid $gray-300;
+			width: 3rem;
+			height: 3rem;
+
+			&:before {
+				@extend .position-relative;
+				top: 1.4rem;
+			}
+			&:hover{
+				@extend .text-primary;
+				cursor: pointer;
+				border-color: $primary;
+			}
+		}
+	}
+
+	.menu {
+		@extend .position-relative;
+		@extend .menu-mobile-dropdown;
+
+		>li {
+			>a {
+				&:first-of-type {
+					@extend .h6;
+					@extend .mb-8;
+					letter-spacing: 2px;
+					font-weight:$font-weight-normal!important;
+				}
+			}
+
+			.sub-menu {
+				@extend .mt-lg-3, .mt-0;
+				@extend .position-relative;
+
+				li {
+					@extend .py-1;
+				}
+			}
+		}
+	}
+
+	.menu-footer {
+		li {
+			@extend .pb-3;
+			&:first-child{
+				@include media-breakpoint-down(md){
+					border-top:2px solid $dark-gray!important;
+				}
+			}
+
+			&:last-child{
+				@include media-breakpoint-down(md){
+					border-bottom:2px solid $dark-gray!important;
+				}
+			}
+			a {
+				@extend .text-uppercase;
+				@extend .h6;
+				letter-spacing: 2px;
+				&:hover {
+					@extend .text-primary;
+				}
+			}
+		}
+	}
+	// ??????
+	@include media-breakpoint-between(md,lg){
+		.mobile-desktop-nav{
+			display:none;
+		}
+		.tablet-nav{
+			display:block;
+			.menu-item-has-children{
+				&:after{
+					top:0.7rem!important;
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md){
+		.mobile-desktop-nav{
+			display:block;
+		}
+		.tablet-nav{
+			display:none;
+		}
+	}
+
+	@include media-breakpoint-up(lg){
+		.mobile-desktop-nav{
+			display:flex;
+		}
+		.tablet-nav{
+			display:none;
+		}
+	}
+	//
+}
+
+.a-block>a {
+	@extend .mb-3;
+}

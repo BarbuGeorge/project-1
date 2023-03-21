@@ -1,0 +1,304 @@
+.page-home{
+	// Hero
+	.hero {
+		@extend .pb-14;
+
+		.img-col {
+			@extend .icol-2 ;
+			@extend .position-relative;
+			@extend .px-0, .order-md-1, .order-2;
+			@extend .h-100;
+			&:before{
+				content:'';
+				position:absolute;
+				top:-16rem;
+				height:65rem;
+				width:100%;
+				background-image:url('../../images/page-home/home_header.jpg');
+				background-size:auto 100%;
+				background-repeat: no-repeat;
+				background-position:center top;
+				@include media-breakpoint-between(lg, xl){
+					top:-12rem;
+					height:56rem;
+				}
+				@include media-breakpoint-down(md){
+					display:none!important;
+
+				}
+				@include media-breakpoint-between(md, lg){
+					height:60rem;
+					top:-11rem;
+					background-position:66% 100%;
+				}
+			}
+		}
+		.text-col{
+			@extend .icol-2, .ms-0;
+			@extend .position-relative;
+			@extend .order-md-2, .order-1;
+			@extend .px-lg-0, .px-4;
+
+			@include media-breakpoint-between(lg, xl){
+				h1{
+					font-size:5rem;
+				}
+			}
+			@include media-breakpoint-between(sm, md){
+				width:73%!important;
+				margin-left:6.5rem!important;
+			}
+			@media screen and (min-width:800px) and (max-width:992px){
+				width:37%;
+			}
+			@media screen and (min-width:1200px) and (max-width:1399px){
+				width:37rem;
+			}
+			@media screen and (min-width:1400px){
+				width:40rem;
+			}
+			.text-wrapper{
+				@extend .my-6;
+				@include media-breakpoint-between(lg, xxl){
+					padding-left:2rem;
+					padding-right:2rem;
+				}
+			}
+		}
+	}
+
+	.despre-noi-hero {
+		@extend .container;
+		@extend .mx-auto;
+		@extend .position-relative;
+		margin-top:-4rem;
+		z-index:2;
+
+		@include media-breakpoint-between(md, lg){
+			margin-top: -2rem;
+		}
+		@include media-breakpoint-down(md) {
+			margin-top: -21rem;
+		}
+
+		.row {
+			@extend .w-100, .m-0;
+
+			.despre-text-col {
+				@extend .icol-2;
+				@extend .bg-light;
+				@extend .text-dark;
+				@extend .d-flex;
+				@extend .px-lg-9, .px-6, .py-lg-0, .py-6;
+				margin-bottom: 0 !important;
+
+				.text-wrapper {
+					@extend .my-auto;
+				}
+			}
+
+			.despre-img-col {
+				@extend .icol-2;
+				@extend .px-0;
+
+				margin-bottom: 0 !important;
+
+				img {
+					@extend .h-100;
+				}
+			}
+		}
+	}
+
+	.section-servicii {
+		@extend .text-center;
+		@extend .pb-0;
+		@include media-breakpoint-down($breakpoint){
+			@extend .px-0;
+		}
+		.servicii{
+			@extend .container;
+			margin-bottom:14rem;
+			@include media-breakpoint-down($breakpoint){
+				margin-bottom:4rem;
+			}
+			.row {
+
+				@extend .mb-5;
+
+				// .serviciu {
+				// 	@extend .icol-4;
+				// 	@extend .position-relative;
+				// 	overflow:hidden!important;
+				// 	&:hover{
+				// 		cursor:pointer;
+				// 		img{
+				// 			transform:scale(1.2);
+				// 			transition:transform 0.3s ease-in-out;
+				// 		}
+				// 		.serviciu-title{
+				// 			h4{
+				// 				@extend .text-primary;
+				// 				transition:transform 0.3s ease-in-out;
+				// 			}
+				// 		}
+				// 	}
+
+				// 	img{
+				// 		object-fit:cover;
+				// 		transform:scale(1);
+				// 		transition:transform 0.3s ease-in-out;
+				// 	}
+
+				// 	.serviciu-title {
+				// 		@extend .position-absolute, .top-0, .bottom-0, .start-0, .end-0;
+				// 		@extend .d-flex, .align-items-center, .justify-content-center;
+				// 		@extend .mx-auto, .my-auto;
+				// 		transition:transform 0.3s ease-in-out;
+				// 	}
+
+				// }
+			}
+		}
+		hr {
+			@extend .mt-7, .mb-9;
+			@extend .mx-auto;
+		}
+	}
+
+	.despre-servicii {
+		@extend .d-flex, .flex-wrap, .mw-100, .w-100;
+		@extend .full-width-bg-white;
+		@extend .mb-lg-15, .mb-6;
+		.despre-servicii-img-col{
+			@extend .icol-2;
+			@extend .p-0, .mb-0;
+			@extend .order-md-1, .order-2;
+			@extend .text-end;
+			margin-bottom:0!important;
+
+			img{
+				height:100%;
+				object-fit:cover;
+			}
+		}
+
+		.despre-servicii-text-col {
+			@extend .d-flex;
+			@extend .icol-2;
+			@extend .text-start, .text-dark;
+			@extend .order-md-2, .order-1;
+			@extend .position-relative;
+			@extend .bg-white;
+			margin-bottom:0!important;
+
+			.text-wrapper {
+				@extend .my-auto;
+				@extend .mx-auto;
+				@extend .ps-10, .pe-12;
+
+				padding-top:9rem;
+				padding-bottom:9rem;
+
+				@include media-breakpoint-down($breakpoint){
+					padding: 3rem 1.5rem!important;
+				}
+			}
+		}
+	}
+
+	.section-medici{
+		@extend .position-relative;
+		@extend .bg-section-a;
+
+		//a
+		.medici-content{
+			@extend .text-lg-start, .text-center;
+			@extend .col-lg-7, .col-12;
+
+			.horizontal-divider{
+				@extend .position-relative;
+				@extend .h-100, .w-25;
+				@extend .mt-12;
+				margin-bottom:12rem;
+				@include media-breakpoint-down($breakpoint){
+					width:100%!important;
+				}
+				@include media-breakpoint-down($breakpoint){
+					display:none!important;
+				}
+				hr{
+					@extend .position-absolute, .top-0, .bottom-0, .start-0;
+					@extend .mx-auto;
+					right:-2rem;
+					@include media-breakpoint-down($breakpoint){
+						right:-1rem!important;
+					}
+				}
+			}
+		}
+
+		.doctor{
+			@extend .d-flex, .flex-lg-row, .flex-column, .align-items-center;
+			@extend .text-lg-start, .text-center;
+			@extend .mb-11;
+			&:hover{
+				.doctor-img{
+					img{
+						transform:scale(1.2);
+					}
+				}
+			}
+			.doctor-img{
+					overflow: hidden;
+					position: relative;
+					max-width: 15rem;
+					max-height: 15rem;
+					width: 100%;
+					height: 100%;
+					border-radius: 100%;
+				img{
+					@extend .rounded-circle;
+					@extend .mb-lg-0, .mb-6;
+					width:15rem;
+					height:15rem;
+					transition:all 0.5s ease-in-out;
+				}
+			}
+			.doctor-description{
+				@extend .ms-lg-7, .ms-0;
+				.doctor-specializari{
+					@extend .small-golden-text;
+					// @extend .mb-3;
+				}
+			}
+		}
+	}
+
+	.carousel-section{
+		// @extend .container-fluid;
+		// @extend .text-center;
+		// @extend .mw-100, .w-100;
+		.owl-carousel{
+			.owl-item{
+				.card{
+					.card-image{
+						overflow:hidden;
+						img{
+							transition:all 0.5s ease-in-out;
+						}
+					}
+				}
+				&:hover{
+					.card{
+						.card-image{
+							img{
+								transform:scale(1.2);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

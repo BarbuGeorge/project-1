@@ -1,0 +1,22 @@
+.pagination{
+	@extend .mt-lg-9, .mt-5;
+	@extend .d-flex, .justify-content-center, .align-items-center;
+	.page-numbers{
+		@extend .text-muted;
+		@extend .px-4, .py-3;
+		text-decoration: none!important;
+
+		&.current{
+			@extend .border, .border-2, .border-primary;
+		}
+	}
+	.pagination-arrow-right,.pagination-arrow-left{
+		path{
+			stroke:$primary!important;
+			fill:$primary!important;
+		}
+	}
+	.pagination-arrow-left{
+		transform:rotate(180deg)!important;
+	}
+}

@@ -1,0 +1,237 @@
+/*
+Theme Name: Cosmopolitan Theme
+*/
+
+/* ---------------------------------------------------------------------------------------------------------- */
+@import "../_scss/fonts.scss";
+@import "../_scss/_variables.scss";
+@import "../../assets/bootstrap-5.2.3/scss/bootstrap.scss";
+
+
+/* ---------------------------------------------------------------------------------------------------------- */
+// SIZES
+	$header-height: 140px;
+	$footer-height: 688px;
+
+	$breakpoint: 'lg'; // media query breakpoint for ALL!!!!!!
+
+
+// ----------------------------------------------------------------------------------
+// BTN
+	.btn {
+		@extend .text-uppercase;
+		letter-spacing: 2px;
+		&:not(.btn-sm):not(.btn-lg){
+			// hack to align text center on button
+			font-size: 0.85rem;
+			line-height: 0.75rem !important;
+			padding-bottom: 0.75rem !important;
+		}
+
+		// De intrebat
+		&.btn-outline-primary{
+			@extend .text-light;
+			&:hover{
+				@extend .bg-transparent;
+				@extend .text-primary;
+			}
+			&.dark{
+				@extend .text-dark;
+				&:hover{
+					@extend .text-primary;
+				}
+			}
+		}
+
+	}
+
+
+// ----------------------------------------------------------------------------------
+// HEADERS
+	h6, .h6 { @extend .text-uppercase, .fw-bold;}
+
+// ----------------------------------------------------------------------------------
+// De intrebat pe Cos
+// Mobile Font Sizes
+@include media-breakpoint-down($breakpoint){
+	h1{
+		font-size:40px;
+	}
+	h2{
+		font-size:34px;
+	}
+	h3{
+		font-size:26px;
+	}
+	p{
+		font-size:$font-size-sm;
+	 }
+}
+
+// De intrebat pe Cos
+	h1,h2{
+		letter-spacing:-0.25rem;
+	}
+	h3,h4{
+		letter-spacing:-0.1rem;
+	}
+	h5{
+		letter-spacing:-0.06rem;
+	}
+	h1,h2,h3,h4,h5{
+		@include media-breakpoint-down($breakpoint){
+				letter-spacing: -0.1rem!important;
+		}
+	}
+	// Line height
+	h1{
+		line-height:5.8rem;
+		@include media-breakpoint-down($breakpoint){
+			line-height:2.5rem!important;
+		}
+	}
+	h3{
+		line-height:3rem;
+		@include media-breakpoint-down($breakpoint){
+			line-height:2.5rem;
+		}
+	}
+	h4{
+		line-height:2rem;
+	}
+//
+
+
+// ----------------------------------------------------------------------------------
+
+// a LINKS
+	.a-block > a,
+	a.a-block {
+		@extend .d-block;
+	}
+// ----------------------------------------------------------------------------------
+
+// HR
+hr{
+	&:not(.footer hr){
+		@include media-breakpoint-down($breakpoint){
+			display:none;
+		}
+	}
+	&:not(footer hr, .page-single-post hr, .page-medici .section-prezentare-medici hr, .page-servicii .servicii-categories-list hr){
+		transform:rotate(90deg);
+		width:90px;
+		opacity:100%;
+	}
+}
+// ----------------------------------------------------------------------------------
+
+//  Breadcrumb
+
+.breadcrumb{
+	@extend .justify-content-center;
+	@extend .text-center;
+	a{
+		text-decoration:none;
+		span{
+			@extend .text-muted;
+			text-decoration:none;
+			&:hover{
+				color:$gray-400!important;
+			}
+		}
+	}
+	@include media-breakpoint-down($breakpoint){
+		font-size:0.8rem!important;
+	}
+}
+
+// ---------------------------------------------------------------------------------
+
+//  Background Section A
+.bg-section-a{
+	background:url('../../images/page-home/background_medici.jpg');
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: top right;
+	@include media-breakpoint-down($breakpoint){
+		background:unset!important;
+	}
+}
+// ----------------------------------------------------------------------------------
+
+//  Full width bg-white
+.full-width-bg-white{
+	@extend .position-relative;
+	@extend .h-100;
+	&:after{
+		content:'';
+		position:absolute;
+		top:0;
+		right:0;
+		margin:auto;
+		background:$light;
+		width:100vw;
+		height:inherit;
+		z-index:-1;
+	}
+	&:before{
+		content:'';
+		position:absolute;
+		top:0;
+		left:0;
+		margin:auto;
+		background:$light;
+		width:100vw;
+		height:inherit;
+		z-index:-1;
+	}
+}
+// ----------------------------------------------------------------------------------
+
+.small-golden-text{
+	@extend .h6;
+	@extend .text-uppercase;
+	@extend .fw-normal;
+	@extend .text-primary;
+	line-height:1.5rem;
+	letter-spacing:2px;
+}
+
+.btn-close{
+	&:focus{
+		outline:none!important;
+		box-shadow:none;
+	}
+}
+//  Rounded image
+.rounded-img{
+	border-radius:50%;
+}
+
+// IMPORTS
+	@import "../_scss/layout.scss";
+	@import "../_scss/igrid.scss";
+	@import "../_scss/footer.scss";
+	@import "../_scss/header.scss";
+	@import "../_scss/menu-mobile-dropdown.scss";
+	@import "../_scss/lists.scss";
+	@import "../_scss/forms.scss";
+	@import "../_scss/cards.scss";
+	@import "../_scss/owl-carousel.scss";
+	@import "../_scss/page-title-header.scss";
+	@import "../_scss/articole-cards.scss";
+	@import "../_scss/pagination.scss";
+	@import "../_scss/section-consultatii.scss";
+	@import "../_scss/modal.scss";
+
+	@import "../_scss/page-home.scss";
+	@import "../_scss/page-contact.scss";
+	@import "../_scss/page-articole.scss";
+	@import "../_scss/page-medici.scss";
+	@import "../_scss/page-single-post.scss";
+	@import "../_scss/page-profil-medic.scss";
+	@import "../_scss/page-before-after.scss";
+	@import "../_scss/page-preturi.scss";
+	@import "../_scss/page-servicii.scss";
+	@import "../_scss/page-despre.scss";

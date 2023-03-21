@@ -1,0 +1,85 @@
+.menu-mobile-dropdown{
+	@include media-breakpoint-down($breakpoint){
+		display: block !important;
+		transform: translateX(0%);
+		transition: all 0.5s ease-in-out !important;
+		-webkit-transition: all 0.5s ease-in-out;
+		-moz-transition: all 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;
+
+		li {
+			padding-right:1rem;
+			padding-top: 0.8rem;
+			padding-bottom:0.6rem;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			&:first-child {
+				border-top: 0 ;
+			}
+		}
+
+		// Submenu mobile
+		.sub-menu {
+			background: $dark;
+			width: 100% !important;
+			position: absolute;
+			visibility: hidden;
+			display:none;
+			opacity: 0;
+			max-height:0;
+			z-index: 3;
+			top: 0;
+
+			li {
+				border: 0 !important;
+			}
+		}
+		.menu-item-has-children {
+			@extend .position-relative;
+			cursor:pointer;
+			&:after {
+				@extend .position-absolute;
+				content: '\f054';
+				font-family:"FontAwesome";
+				top: 0.8rem;
+				right:0rem;
+				transition: transform 0.2s;
+				transform: rotate(0deg);
+
+			}
+		}
+	}
+	@include media-breakpoint-down(md){
+		li{
+			border: 1px solid $dark-gray;
+			border-left: 0;
+			border-right: 0;
+		}
+	}
+}
+
+
+.active-sub-menu {
+	@include media-breakpoint-down($breakpoint){
+		position: relative !important;
+		visibility: visible !important;
+		display:block!important;
+		opacity: 1 !important;
+		padding-top: 1rem;
+		max-height:100%!important;
+		transition: all 0.8s ease-in-out !important;
+		-webkit-transition: all 0.8s ease-in-out;
+		-moz-transition: all 0.8s ease-in-out;
+		transition: all 0.8s ease-in-out;
+	}
+}
+
+.active-menu-item {
+	&:after {
+		transform: rotate(90deg) !important;
+		transition: transform 0.2s;
+	}
+}

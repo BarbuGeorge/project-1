@@ -1,0 +1,31 @@
+.modal{
+	&.search-modal{
+		@extend .position-absolute;
+		.modal-header{
+			@extend .border-0;
+			@extend .position-relative;
+		}
+		.modal-content{
+			@extend .bg-dark;
+			@extend .px-6, .py-8;
+			width:600px;
+			@include media-breakpoint-down($breakpoint){
+				width:100%;
+			}
+			.search-input{
+				@extend .w-100;
+				@extend .bg-transparent;
+				@extend .text-primary;
+				@extend .border-0;
+				@extend .border-bottom, .border-primary;
+				&:focus{
+					outline:0!important;
+				}
+			}
+		}
+		.btn-close{
+			@extend .position-absolute;
+			top:-2rem;right:-1rem;
+		}
+	}
+}
